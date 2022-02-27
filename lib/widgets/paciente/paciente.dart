@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Paciente>> fetchPaciente(http.Client client) async {
-  String token = '31|FYtQBwnemUGIEF3Zo6y4zQuueErwDb7OVNastLJZ';
-  const url = 'http://172.20.0.82:8000/api/pacientes';
+  String token = '1|Ge67AMaYNl1g19DjSkqhc2LIQHGJPUN4TfPTvgyh';
+  //const url = 'http://172.20.0.24:8000/api/pacientes';
   //const url = 'http://192.168.0.107:8000/api/pacientes';
+  const url = 'http://toxicidade.sa-east-1.elasticbeanstalk.com/api/pacientes';
 
   final response = await client.get(
     Uri.parse(url),
@@ -60,7 +61,7 @@ class Paciente {
     return Paciente(
         nome: json['nome'] as String,
         email: json['email'] as String,
-        cpf: json['CPF'] as String,
+        cpf: json['cpf'] as String,
         acesso: json['acesso'] as String);
   }
 }
@@ -76,7 +77,7 @@ class PacienteListState extends State<PacienteListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Paciente'),
       ),

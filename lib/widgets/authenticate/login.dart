@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Center(
@@ -90,7 +90,7 @@ class _LoginState extends State<Login> {
     Map data = {"email": _email, "password": _password};
 
     final response = await http.post(
-      Uri.parse('http://192.168.0.105:8000/api/login'),
+      Uri.parse('http://toxicidade.sa-east-1.elasticbeanstalk.com/api/login'),
       headers: {
         "Accept": "application/json",
       },
