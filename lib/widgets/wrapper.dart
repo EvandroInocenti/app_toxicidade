@@ -1,4 +1,4 @@
-import 'package:app_toxicidade/widgets/authenticate/authenticate.dart';
+import 'package:toxicidade/widgets/authenticate/authenticate.dart';
 import 'package:flutter/material.dart';
 
 class Wrapper extends StatelessWidget {

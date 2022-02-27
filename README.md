@@ -1,4 +1,4 @@
-# app_toxicidade
+# toxicidade
 
 A new flutter module project.
 

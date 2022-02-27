@@ -2,8 +2,8 @@
 
 import 'dart:convert';
 
-import 'package:app_toxicidade/widgets/paciente/paciente.dart';
-import 'package:app_toxicidade/widgets/profissional_saude/profissional_saude.dart';
+import 'package:toxicidade/widgets/paciente/paciente.dart';
+import 'package:toxicidade/widgets/profissional_saude/profissional_saude.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

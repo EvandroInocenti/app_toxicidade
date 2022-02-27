@@ -7,7 +7,7 @@ flutter pub get
 
 ## exception
 
-FileSystemException: FileSystemException: Deletion failed, path = 'D:\Projetos\flutter\Nexo\app_toxicidade\.android' (OS Error: The process cannot access the file because it is being used by another process.
+FileSystemException: FileSystemException: Deletion failed, path = 'D:\Projetos\flutter\Nexo\toxicidade\.android' (OS Error: The process cannot access the file because it is being used by another process.
 , errno = 32)
 
 ```

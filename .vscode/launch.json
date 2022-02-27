@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "app_toxicidade",
+            "name": "toxicidade",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "app_toxicidade (profile mode)",
+            "name": "toxicidade (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"

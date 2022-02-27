@@ -1,4 +1,4 @@
-import 'package:app_toxicidade/widgets/authenticate/login.dart';
+import 'package:toxicidade/widgets/authenticate/login.dart';
 import 'package:flutter/material.dart';
 
 class Authenticate extends StatefulWidget {

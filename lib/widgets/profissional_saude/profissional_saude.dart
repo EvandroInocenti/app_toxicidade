@@ -1,4 +1,4 @@
-import 'package:app_toxicidade/widgets/profissional_saude/cadastro.dart';
+import 'package:toxicidade/widgets/profissional_saude/cadastro.dart';
 import 'package:flutter/material.dart';
 
 class ProfissionalSaude extends StatefulWidget {
