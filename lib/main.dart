@@ -26,12 +26,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Acessar',
+      title: 'Toxicidade',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
       //home: const Login(),
       home: const Wrapper(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

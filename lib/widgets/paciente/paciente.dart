@@ -4,9 +4,12 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:toxicidade/widgets/paciente/pacientes_detail_page.dart';
+
+String token = '1|Ge67AMaYNl1g19DjSkqhc2LIQHGJPUN4TfPTvgyh';
 
 Future<List<Paciente>> fetchPaciente(http.Client client) async {
-  String token = '1|Ge67AMaYNl1g19DjSkqhc2LIQHGJPUN4TfPTvgyh';
+  token;
   //const url = 'http://172.20.0.24:8000/api/pacientes';
   //const url = 'http://192.168.0.107:8000/api/pacientes';
   const url = 'http://toxicidade.sa-east-1.elasticbeanstalk.com/api/pacientes';
@@ -21,7 +24,6 @@ Future<List<Paciente>> fetchPaciente(http.Client client) async {
   );
 
   if (response.statusCode == 200) {
-    print('Token : ${token}');
     return compute(parsePaciente, response.body);
   } else {
     throw Exception('Falha ao carregar paciente');
@@ -29,8 +31,6 @@ Future<List<Paciente>> fetchPaciente(http.Client client) async {
 }
 
 List<Paciente> parsePaciente(String responseBody) {
-  print(responseBody);
-
   final parsed = jsonDecode(responseBody);
   //final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
   //return parsed.map<Paciente>((json) => Paciente.fromJson(json)).toList();
@@ -104,14 +104,27 @@ class PacienteList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: pacientes == null ? 0 : pacientes!.length,
       itemBuilder: (BuildContext context, int index) {
-        return Container(
-          height: 50,
-          color: Colors.blueGrey.shade100,
-          child: Center(child: Text(pacientes![index].nome)),
+        return ListTile(
+          tileColor: Colors.blueGrey.shade50,
+          title: Text(
+            pacientes![index].nome,
+            style: const TextStyle(fontSize: 20.0, color: Colors.black),
+          ),
+          subtitle: Text(pacientes![index].email),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PacienteDetailPage(
+                  paciente: pacientes![index],
+                ),
+              ),
+            );
+          },
         );
       },
-      itemCount: pacientes == null ? 0 : pacientes!.length,
     );
   }
 }
