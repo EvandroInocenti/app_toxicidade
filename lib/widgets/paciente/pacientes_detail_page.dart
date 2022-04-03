@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:toxicidade/widgets/paciente/paciente.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 
 class PacienteDetailPage extends StatefulWidget {
   final Paciente? paciente;
@@ -12,25 +11,24 @@ class PacienteDetailPage extends StatefulWidget {
 }
 
 class _PacienteDetailPageState extends State<PacienteDetailPage> {
-  bool status = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Informações do Paciente'),
       ),
-      body: pacienteDetails(),
+      body: _pacienteDetails(),
     );
   }
 
-  pacienteDetails() {
+  _pacienteDetails() {
     Paciente? paciente = widget.paciente;
     //bool status = paciente?.acesso == "Bloqueado" ? false : true;
     return SingleChildScrollView(
       padding: const EdgeInsets.all(32.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
           const SizedBox(
             height: 0.5,
             width: double.infinity,
@@ -63,6 +61,66 @@ class _PacienteDetailPageState extends State<PacienteDetailPage> {
               ),
             ],
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                paciente.telefone,
+                style: const TextStyle(
+                  color: Colors.indigo,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                paciente.altura.toString(),
+                style: const TextStyle(
+                  color: Colors.indigo,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                paciente.dataNascimento.toString(),
+                style: const TextStyle(
+                  color: Colors.indigo,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                paciente.peso.toString(),
+                style: const TextStyle(
+                  color: Colors.indigo,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                paciente.superficieCorporea.toString(),
+                style: const TextStyle(
+                  color: Colors.indigo,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
           const SizedBox(
             height: 0.5,
             width: double.infinity,
@@ -78,18 +136,6 @@ class _PacienteDetailPageState extends State<PacienteDetailPage> {
                 ),
               ),
             ],
-          ),
-          FlutterSwitch(
-            value: status,
-            activeText: "",
-            inactiveText: "",
-            showOnOff: true,
-            activeColor: Colors.indigo,
-            onToggle: (val) {
-              setState(() {
-                status = val;
-              });
-            },
           ),
         ],
       ),

@@ -1,4 +1,4 @@
-import 'package:toxicidade/widgets/wrapper.dart';
+import 'package:toxicidade/widgets/authenticate/authenticate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -26,12 +26,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Toxicidade',
+      title: 'Nexo Onco',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      //home: const Login(),
-      home: const Wrapper(),
+      home: const Authenticate(),
       debugShowCheckedModeBanner: false,
     );
   }

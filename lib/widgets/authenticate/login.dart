@@ -3,7 +3,6 @@
 import 'dart:convert';
 
 import 'package:toxicidade/widgets/paciente/paciente.dart';
-import 'package:toxicidade/widgets/profissional_saude/profissional_saude.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -34,7 +33,6 @@ class _LoginState extends State<Login> {
                 height: 200,
                 child: Image.asset('images/nexo.png'),
               ),
-
               TextField(
                 controller: _emailCtrl,
                 autofocus: true,
@@ -45,7 +43,6 @@ class _LoginState extends State<Login> {
                   labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
-
               TextField(
                 controller: _senhaCtrl,
                 autofocus: true,
@@ -57,7 +54,6 @@ class _LoginState extends State<Login> {
                   labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
-              //Divider(),
               ButtonTheme(
                 height: 90.0,
                 child: ElevatedButton(
@@ -72,7 +68,9 @@ class _LoginState extends State<Login> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const PacienteListPage(),
+                        builder: (context) => PacienteListPage(
+                            email: _emailCtrl.toString(),
+                            senha: _senhaCtrl.toString()),
                       ),
                     );
                   },
